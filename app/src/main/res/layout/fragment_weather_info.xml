@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.WeatherListFragment">
+
+
+    <TextView
+        android:id="@+id/city_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/city_name"
+        android:textAlignment="center"
+        android:layout_marginTop="32dp"
+        android:textColor="@color/material_dynamic_primary60"
+        android:textSize="42sp"/>
+
+    <TextView
+        android:id="@+id/weather_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/weather_info"
+        android:layout_margin="24dp"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="24sp"/>
+
+    <TextView
+        android:id="@+id/temperature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_margin="48dp"
+        android:textColor="@color/black"
+        android:textSize="48sp"/>
+
+</LinearLayout>
