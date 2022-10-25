@@ -9,6 +9,6 @@ data class Weather (
     val feelsLike: Int = 0
 
         )
-data class City(val city: String)
+data class City(val name: String)
 
 fun getDefaultCity() = City("Moscow")

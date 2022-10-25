@@ -35,9 +35,11 @@ class WeatherDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(WeatherDetailsVewModel ::class.java )
-        viewModel.liveData.observe(viewLifecycleOwner, object : Observer<AppState>{
+        viewModel.getLivaData().observe(viewLifecycleOwner, object : Observer<AppState>{
             override fun onChanged(t: AppState?) {
-
+                if (t != null) {
+                    renderData(t)
+                }
             }
         })
 
@@ -47,9 +49,14 @@ class WeatherDetailsFragment : Fragment() {
     private fun renderData(appState: AppState){
         when(appState){
             is AppState.Loading -> TODO()
-            is AppState.Error -> TODO()
-            is AppState.Success -> {
+            is AppState.Error -> {
 
+            }
+            is AppState.Success -> {
+                val result = appState.weatherData
+                binding.cityName.text =  result.city.name
+                binding.temperature.text = result.temperature.toString()
+                binding.weatherInfo.text = result.feelsLike.toString()
             }
         }
 
